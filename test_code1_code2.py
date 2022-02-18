@@ -59,4 +59,8 @@ if is_job:
 
 # COMMAND ----------
 
+result
+
+# COMMAND ----------
+
 
