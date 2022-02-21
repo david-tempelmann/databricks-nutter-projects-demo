@@ -69,8 +69,8 @@ stages:
 # this is simplification, and won't work with concurrent commits. Ideally it should be a
 # separate repo for each commit
     - script: |
-        echo "Checking out the $(Build.SourceBranchName) branch, test $(branchName)"
-        databricks repos update --path $(STAGING_DIRECTORY) --branch "$(Build.SourceBranchName)"
+        echo "Checking out the $(branchName) branch"
+        databricks repos update --path $(STAGING_DIRECTORY) --branch "$(branchName)"
       env:
         DATABRICKS_HOST: $(DATABRICKS_HOST)
         DATABRICKS_TOKEN: $(DATABRICKS_TOKEN)
