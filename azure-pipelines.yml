@@ -1,6 +1,10 @@
 # Grab variables from the specific variable group
 variables:
-- group: 'Nutter Testing'
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/') }}:
+    branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
+    branchName: $[ replace(variables['System.PullRequest.SourceBranch'], 'refs/heads/', '') ]
+  group: 'Nutter Testing'
 
 trigger:
   batch: true
