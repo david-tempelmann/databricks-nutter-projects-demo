@@ -6,6 +6,7 @@ from pyspark.sql import DataFrame
 # COMMAND ----------
 
 def generate_data1(n=1000, name='my_cool_data'):
+  # comment for demo purpose
   df = spark.range(0, n)
   df.createOrReplaceTempView(name)
 
